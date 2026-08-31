@@ -26,3 +26,11 @@
    3. Subscribe to available providers - Customers can subscribe to certain retail providers so they can easily find products from stores they are interested in.
    4. Purchase clothing - Customers can select clothing items they want to purchase and complete the payment process.
    5. Write reviews - Customers can leave ratings and reviews based on their shopping experience.
+
+2. Provider (the user with the provider role): 
+
+   1. Create/modify/remove provider profile – Providers can create, update, and manage their provider profile and business information.
+   2. Create products– Providers can add clothing items, including product names, descriptions, images, prices, sizes, and other relevant information.
+   3. Manage products – Providers can update or remove products and manage product prices, availability, sizes, and other details.
+   4. View customer activity – Providers can view customer interest and activity related to their products, such as views, favorites, and reviews.
+   5. Reply to reviews – Providers can respond to reviews and feedback left by customers about their products.
