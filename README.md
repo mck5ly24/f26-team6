@@ -28,7 +28,6 @@
    5. Write reviews - Customers can leave ratings and reviews based on their shopping experience.
 
 2. Provider (the user with the provider role): 
-
    1. Create/modify/remove provider profile – Providers can create, update, and manage their provider profile and business information.
    2. Create products– Providers can add clothing items, including product names, descriptions, images, prices, sizes, and other relevant information.
    3. Manage products – Providers can update or remove products and manage product prices, availability, sizes, and other details.
@@ -38,4 +37,6 @@
 3. SysAdmin (the user with the admin role):
    1. Manage user access - Admins can manage customer and provider accounts, update account permissions, suspend accounts, and remove accounts that violate platform rules.
    2. Moderate products - Admins can review, approve, edit, or remove product listings to make sure clothing items, prices, images, and descriptions follow Fit District's guidelines.
+   3. Moderate reviews - Admins can monitor customer reviews, remove inappropriate or fraudulent reviews, and handle reports submitted by customers or providers.
+   4. View usage statistics - Admins can view platform statistics such as popular products, trending brands, customer activity, provider activity, sales activity, and overall site usage.
    
