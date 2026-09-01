@@ -34,3 +34,8 @@
    3. Manage products – Providers can update or remove products and manage product prices, availability, sizes, and other details.
    4. View customer activity – Providers can view customer interest and activity related to their products, such as views, favorites, and reviews.
    5. Reply to reviews – Providers can respond to reviews and feedback left by customers about their products.
+
+3. SysAdmin (the user with the admin role):
+   1. Manage user access - Admins can manage customer and provider accounts, update account permissions, suspend accounts, and remove accounts that violate platform rules.
+   2. Moderate products - Admins can review, approve, edit, or remove product listings to make sure clothing items, prices, images, and descriptions follow Fit District's guidelines.
+   
