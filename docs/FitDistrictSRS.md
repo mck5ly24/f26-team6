@@ -145,13 +145,21 @@ Security/Privacy: description
 Usability: description
 4. Assumptions, Constraints, and Policies
 list any rules, policies, assumptions, etc.
-5. Milestones (course‑aligned)
-M1 Requirements — this file + stories opened as issues.
-M2 High‑fidelity prototype — core customer/provider flows fully interactive.
-M3 Design — architecture, schema, API outline.
-M4 Backend API — key endpoints + tests.
-M5 Increment — ≥2 use cases end‑to‑end.
-M6 Final — complete system & documentation.
-6. Change Management
-Stories are living artifacts; changes are tracked via repository issues and linked pull requests.
-Major changes should update this SRS.
+## 5. Milestones (course-aligned)
+
+- **M1 Requirements** - Complete the Fit District SRS document with Customer, Provider, and SysAdmin user stories and acceptance criteria. Track the requirements through GitHub issues.
+
+- **M2 High-fidelity prototype** - Create an interactive Fit District prototype that demonstrates the main customer and provider flows.
+
+- **M3 Design** - Develop the architecture, database schema, and API outline for the Fit District system.
+
+- **M4 Backend API** - Implement and test the key backend API endpoints needed for Fit District.
+
+- **M5 Increment** - Complete at least two Fit District use cases end-to-end.
+
+- **M6 Final** - Complete the Fit District system, testing, and project documentation.
+## 6. Change Management
+
+Changes to Fit District requirements will be tracked through GitHub issues and linked pull requests. Team members will create or update issues when requirements or user stories need to be changed.
+
+Major changes to the system requirements, user stories, or acceptance criteria should also be reflected in this SRS document to keep the project documentation up to date.
