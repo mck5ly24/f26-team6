@@ -99,22 +99,45 @@ Scenario: <happy path>
     Then the response should be displayed with the customer's review
   ```
 2.3 SysAdmin Stories
-US‑30 —
-Story: As a sysadmin, I want … so that …
-Acceptance:
+- **US-30 — Manage User Access**  
+  _Story:_ As a sysadmin, I want to manage customer and provider accounts, so that I can maintain proper access and enforce platform rules.  
+  _Acceptance:_
+  ```gherkin
+  Scenario: Admin manages a user account
+    Given the sysadmin is logged into an admin account
+    When the sysadmin updates permissions, suspends an account, or removes an account
+    Then the user's account access should be updated accordingly
+  ```
 
-Scenario: <happy path>
-  Given <preconditions>
-  When  <action>
-  Then  <observable outcome>
-US‑31 —
-Story: As a sysadmin, I want … so that …
-Acceptance:
+- **US-31 — Moderate Products**  
+  _Story:_ As a sysadmin, I want to review and manage product listings, so that products follow Fit District's guidelines.  
+  _Acceptance:_
+  ```gherkin
+  Scenario: Admin moderates a product listing
+    Given a product listing exists on Fit District
+    When the sysadmin reviews, approves, edits, or removes the product listing
+    Then the product listing should reflect the sysadmin's action and comply with Fit District's guidelines
+  ```
 
-Scenario: <happy path>
-  Given <preconditions>
-  When  <action>
-  Then  <observable outcome>
+- **US-32 — Moderate Reviews**  
+  _Story:_ As a sysadmin, I want to moderate customer reviews and reports, so that inappropriate or fraudulent content can be handled.  
+  _Acceptance:_
+  ```gherkin
+  Scenario: Admin moderates a customer review
+    Given a customer review or report has been submitted
+    When the sysadmin reviews the content and determines that action is needed
+    Then the sysadmin should be able to remove the review or handle the submitted report
+  ```
+
+- **US-33 — View Usage Statistics**  
+  _Story:_ As a sysadmin, I want to view platform usage statistics, so that I can monitor activity across Fit District.  
+  _Acceptance:_
+  ```gherkin
+  Scenario: Admin views platform statistics
+    Given the platform has recorded user and product activity
+    When the sysadmin opens the platform statistics
+    Then the sysadmin should be able to view popular products, trending brands, customer activity, provider activity, sales activity, and overall site usage
+  ```
 3. Non‑Functional Requirements (make them measurable)
 Performance: description
 Availability/Reliability: description
