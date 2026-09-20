@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--
+  Name: Ronald Hester Jr.
+  Date: 09/20/2026
+  CSC 340
+
+  Fit Di$trict Provider Reviews
+  Milestone 2 High-Fidelity Prototype
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Fit Di$trict</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>FIT <span>DI$TRICT</span></h2>
+            <p>Provider Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="provider-dashboard.html">Dashboard</a>
+            <a href="provider-profile.html">My Profile</a>
+            <a href="provider-products.html">Manage Products</a>
+            <a href="provider-activity.html">Activity</a>
+            <a href="provider-reviews.html" class="active">Reviews</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button>Sign Out</button>
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="page-label">PROVIDER PORTAL</p>
+                <h1>Customer Reviews</h1>
+                <p>View customer feedback and respond to reviews.</p>
+            </div>
+
+            <div class="provider-avatar">
+                C
+            </div>
+
+        </header>
+
+
+        <!-- Review Statistics -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Total Reviews</p>
+                <h2>48</h2>
+                <span>Across all products</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Average Rating</p>
+                <h2>4.7</h2>
+                <span>★★★★★</span>
+            </div>
+
+            <div class="stat-card">
+                <p>5-Star Reviews</p>
+                <h2>36</h2>
+                <span>75% of reviews</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Responses</p>
+                <h2>31</h2>
+                <span>Provider replies</span>
+            </div>
+
+        </section>
+
+
+        <!-- Reviews -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="page-label">CUSTOMER FEEDBACK</p>
+                    <h2>Recent Reviews</h2>
+                </div>
+
+                <select id="reviewFilter" class="review-filter">
+                    <option value="all">All Ratings</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                </select>
+
+            </div>
+
+
+            <div class="provider-review-list">
+
+
+                <!-- Review 1 -->
+
+                <article class="provider-review-card" data-rating="5">
+
+                    <div class="review-top">
+
+                        <div>
+                            <h3>Distressed Denim Jacket</h3>
+                            <p class="review-customer">
+                                Jordan M. • September 20, 2026
+                            </p>
+                        </div>
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                    <p class="review-text">
+                        The jacket looks exactly like the pictures.
+                        The quality is great and the fit was perfect.
+                    </p>
+
+                    <div class="provider-reply"></div>
+
+                    <button class="reply-btn">
+                        Reply to Review
+                    </button>
+
+                </article>
+
+
+                <!-- Review 2 -->
+
+                <article class="provider-review-card" data-rating="4">
+
+                    <div class="review-top">
+
+                        <div>
+                            <h3>Oversized Graphic Tee</h3>
+                            <p class="review-customer">
+                                Taylor R. • September 18, 2026
+                            </p>
+                        </div>
+
+                        <div class="review-stars">
+                            ★★★★☆
+                        </div>
+
+                    </div>
+
+                    <p class="review-text">
+                        Really comfortable shirt and I like the design.
+                        Shipping could have been a little faster.
+                    </p>
+
+                    <div class="provider-reply">
+
+                        <div class="reply-display">
+                            <strong>Cazuals replied:</strong>
+                            <p>
+                                Thanks for the feedback! We're glad you liked the shirt.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <button class="reply-btn">
+                        Edit Reply
+                    </button>
+
+                </article>
+
+
+                <!-- Review 3 -->
+
+                <article class="provider-review-card" data-rating="5">
+
+                    <div class="review-top">
+
+                        <div>
+                            <h3>District Runner</h3>
+                            <p class="review-customer">
+                                Cameron D. • September 15, 2026
+                            </p>
+                        </div>
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                    <p class="review-text">
+                        Super comfortable and they look even better in person.
+                        Definitely worth the price.
+                    </p>
+
+                    <div class="provider-reply"></div>
+
+                    <button class="reply-btn">
+                        Reply to Review
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

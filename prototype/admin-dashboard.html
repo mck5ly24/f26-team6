@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--
+  Name: Ronald Hester Jr.
+  Date: 09/20/2026
+  CSC 340
+
+  Fit Di$trict SysAdmin Dashboard
+  Milestone 2 High-Fidelity Prototype
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SysAdmin Dashboard | Fit Di$trict</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- SysAdmin Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>FIT <span>DI$TRICT</span></h2>
+            <p>SysAdmin Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="active">
+                Dashboard
+            </a>
+
+            <a href="admin-reviews.html">
+                Moderate Reviews
+            </a>
+
+            <a href="admin-statistics.html">
+                Usage Statistics
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button>Sign Out</button>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="page-label">
+                    SYSADMIN PORTAL
+                </p>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Monitor activity and manage the Fit Di$trict platform.
+                </p>
+
+            </div>
+
+            <div class="provider-avatar">
+                A
+            </div>
+
+        </header>
+
+
+        <!-- Platform Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <p>Total Users</p>
+
+                <h2>2,418</h2>
+
+                <span>
+                    Registered accounts
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Active Providers</p>
+
+                <h2>86</h2>
+
+                <span>
+                    Verified providers
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Total Products</p>
+
+                <h2>1,247</h2>
+
+                <span>
+                    Active listings
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Reviews</p>
+
+                <h2>3,892</h2>
+
+                <span>
+                    Customer reviews
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="page-label">
+                        ADMINISTRATION
+                    </p>
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-action-grid">
+
+                <!-- Moderate Reviews -->
+                <a href="admin-reviews.html" class="admin-action-card">
+
+                    <div class="action-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Moderate Reviews
+                        </h3>
+
+                        <p>
+                            Review reported content and remove
+                            inappropriate or fraudulent reviews.
+                        </p>
+
+                        <span>
+                            Review Reports →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Usage Statistics -->
+                <a href="admin-statistics.html" class="admin-action-card">
+
+                    <div class="action-icon">
+                        ↗
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Usage Statistics
+                        </h3>
+
+                        <p>
+                            View platform activity, popular products,
+                            providers, and customer usage.
+                        </p>
+
+                        <span>
+                            View Statistics →
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Admin Attention -->
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="page-label">
+                        REQUIRES ATTENTION
+                    </p>
+
+                    <h2>
+                        Recent Reports
+                    </h2>
+
+                </div>
+
+                <a href="admin-reviews.html" class="text-link">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div class="admin-report-list">
+
+
+                <div class="admin-report-item">
+
+                    <div>
+
+                        <span class="report-badge">
+                            REPORTED
+                        </span>
+
+                        <strong>
+                            Review reported for inappropriate language
+                        </strong>
+
+                        <p>
+                            Review on Distressed Denim Jacket
+                        </p>
+
+                    </div>
+
+                    <span>
+                        12 min ago
+                    </span>
+
+                </div>
+
+
+                <div class="admin-report-item">
+
+                    <div>
+
+                        <span class="report-badge">
+                            REPORTED
+                        </span>
+
+                        <strong>
+                            Review reported as potentially fraudulent
+                        </strong>
+
+                        <p>
+                            Review on District Runner
+                        </p>
+
+                    </div>
+
+                    <span>
+                        1 hr ago
+                    </span>
+
+                </div>
+
+
+                <div class="admin-report-item">
+
+                    <div>
+
+                        <span class="report-badge">
+                            REVIEW
+                        </span>
+
+                        <strong>
+                            Customer report submitted
+                        </strong>
+
+                        <p>
+                            Review on Oversized Graphic Tee
+                        </p>
+
+                    </div>
+
+                    <span>
+                        Yesterday
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

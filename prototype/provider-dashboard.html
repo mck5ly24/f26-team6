@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+  Name: Ronald Hester Jr.
+  Date: 09/20/2026
+  CSC 340
+
+  Fit District Provider Dashboard
+  Milestone 2 High-Fidelity Prototype
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Dashboard | Fit Di$trict</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>FIT <span>DI$TRICT</span></h2>
+            <p>Provider Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="provider-dashboard.html" class="active">Dashboard</a>
+            <a href="provider-profile.html">My Profile</a>
+            <a href="provider-products.html">Manage Products</a>
+            <a href="provider-activity.html">Activity</a>
+            <a href="provider-reviews.html">Reviews</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button>Sign Out</button>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+            <div>
+                <p class="page-label">PROVIDER PORTAL</p>
+                <h1>Dashboard</h1>
+                <p>Welcome back, Cazuals.</p>
+            </div>
+
+            <div class="provider-avatar">
+                C
+            </div>
+        </header>
+
+
+        <!-- Stats -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Active Products</p>
+                <h2>12</h2>
+                <span>Products currently listed</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Total Reviews</p>
+                <h2>48</h2>
+                <span>Across all products</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Average Rating</p>
+                <h2>4.7</h2>
+                <span>★★★★★</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Product Views</p>
+                <h2>1,284</h2>
+                <span>Last 30 days</span>
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+        <section class="dashboard-section">
+
+            <div class="section-title">
+                <div>
+                    <p class="page-label">MANAGE YOUR STORE</p>
+                    <h2>Quick Actions</h2>
+                </div>
+            </div>
+
+            <div class="action-grid">
+
+                <a href="provider-products.html" class="action-card">
+                    <div class="action-icon">+</div>
+                    <h3>Manage Products</h3>
+                    <p>Add, edit, or remove your product listings.</p>
+                    <span>Manage Products →</span>
+                </a>
+
+                <a href="provider-profile.html" class="action-card">
+                    <div class="action-icon">P</div>
+                    <h3>Edit Profile</h3>
+                    <p>Update your brand information and provider profile.</p>
+                    <span>Edit Profile →</span>
+                </a>
+
+                <a href="provider-reviews.html" class="action-card">
+                    <div class="action-icon">★</div>
+                    <h3>Customer Reviews</h3>
+                    <p>View customer feedback and reply to reviews.</p>
+                    <span>View Reviews →</span>
+                </a>
+
+                <a href="provider-activity.html" class="action-card">
+                    <div class="action-icon">↗</div>
+                    <h3>View Activity</h3>
+                    <p>See recent product and customer activity.</p>
+                    <span>View Activity →</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Activity -->
+        <section class="dashboard-section">
+
+            <div class="section-title">
+                <div>
+                    <p class="page-label">LATEST UPDATES</p>
+                    <h2>Recent Activity</h2>
+                </div>
+
+                <a href="provider-activity.html" class="text-link">
+                    View All
+                </a>
+            </div>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+                    <div>
+                        <strong>New review received</strong>
+                        <p>Distressed Denim Jacket received a 5-star review.</p>
+                    </div>
+                    <span>10 min ago</span>
+                </div>
+
+                <div class="activity-item">
+                    <div>
+                        <strong>Product viewed</strong>
+                        <p>Oversized Graphic Tee reached 250 views.</p>
+                    </div>
+                    <span>2 hrs ago</span>
+                </div>
+
+                <div class="activity-item">
+                    <div>
+                        <strong>Product updated</strong>
+                        <p>You updated the listing for District Runner.</p>
+                    </div>
+                    <span>Yesterday</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

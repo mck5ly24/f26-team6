@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--
+  Name: Ronald Hester Jr.
+  Date: 09/20/2026
+  CSC 340
+
+  Fit District Provider Product Management
+  Milestone 2 High-Fidelity Prototype
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products | Fit Di$trict</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>FIT <span>DI$TRICT</span></h2>
+            <p>Provider Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="provider-dashboard.html">Dashboard</a>
+            <a href="provider-profile.html">My Profile</a>
+            <a href="provider-products.html" class="active">Manage Products</a>
+            <a href="provider-activity.html">Activity</a>
+            <a href="provider-reviews.html">Reviews</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button>Sign Out</button>
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="page-label">PROVIDER PORTAL</p>
+                <h1>Manage Products</h1>
+                <p>Add, edit, and manage your Fit Di$trict listings.</p>
+            </div>
+
+            <button class="primary-btn" id="showAddProduct">
+                + Add Product
+            </button>
+
+        </header>
+
+
+        <!-- Product Summary -->
+
+        <section class="product-summary">
+
+            <div>
+                <strong>12</strong>
+                <span>Active Products</span>
+            </div>
+
+            <div>
+                <strong>3</strong>
+                <span>Categories</span>
+            </div>
+
+            <div>
+                <strong>1,284</strong>
+                <span>Total Views</span>
+            </div>
+
+        </section>
+
+
+        <!-- Add Product Form -->
+
+        <section class="dashboard-section add-product-section" id="addProductSection">
+
+            <div class="section-title">
+                <div>
+                    <p class="page-label">NEW LISTING</p>
+                    <h2>Add Product</h2>
+                </div>
+
+                <button class="close-btn" id="closeAddProduct">×</button>
+            </div>
+
+            <form id="addProductForm" class="product-form">
+
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" placeholder="Example: Distressed Denim Jacket" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productCategory">Category</label>
+
+                    <select id="productCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Footwear">Footwear</option>
+                        <option value="Accessories">Accessories</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input type="number" id="productPrice" placeholder="0.00" step="0.01" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="productDescription">Description</label>
+
+                    <textarea id="productDescription" placeholder="Enter a short product description..."></textarea>
+                </div>
+
+                <div class="full-width">
+                    <button type="submit" class="primary-btn">
+                        Add Product
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Products -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="page-label">YOUR STORE</p>
+                    <h2>Product Listings</h2>
+                </div>
+
+                <input type="text" id="providerProductSearch" class="search-input" placeholder="Search products...">
+
+            </div>
+
+
+            <div class="provider-product-list" id="productList">
+
+                <!-- Product 1 -->
+
+                <article class="provider-product-card">
+
+                    <div class="product-placeholder">
+                        JACKET
+                    </div>
+
+                    <div class="provider-product-info">
+
+                        <span class="status-badge">ACTIVE</span>
+
+                        <h3>Distressed Denim Jacket</h3>
+
+                        <p>Clothing</p>
+
+                        <strong>$89.99</strong>
+
+                    </div>
+
+                    <div class="product-metrics">
+                        <span>324 views</span>
+                        <span>4.8 ★</span>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Remove</button>
+                    </div>
+
+                </article>
+
+
+                <!-- Product 2 -->
+
+                <article class="provider-product-card">
+
+                    <div class="product-placeholder">
+                        TEE
+                    </div>
+
+                    <div class="provider-product-info">
+
+                        <span class="status-badge">ACTIVE</span>
+
+                        <h3>Oversized Graphic Tee</h3>
+
+                        <p>Clothing</p>
+
+                        <strong>$34.99</strong>
+
+                    </div>
+
+                    <div class="product-metrics">
+                        <span>250 views</span>
+                        <span>4.6 ★</span>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Remove</button>
+                    </div>
+
+                </article>
+
+
+                <!-- Product 3 -->
+
+                <article class="provider-product-card">
+
+                    <div class="product-placeholder">
+                        SHOES
+                    </div>
+
+                    <div class="provider-product-info">
+
+                        <span class="status-badge">ACTIVE</span>
+
+                        <h3>District Runner</h3>
+
+                        <p>Footwear</p>
+
+                        <strong>$119.99</strong>
+
+                    </div>
+
+                    <div class="product-metrics">
+                        <span>410 views</span>
+                        <span>4.9 ★</span>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Remove</button>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

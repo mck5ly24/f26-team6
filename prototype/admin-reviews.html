@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--
+  Name: Ronald Hester Jr.
+  Date: 09/20/2026
+  CSC 340
+
+  Fit Di$trict SysAdmin Review Moderation
+  Milestone 2 High-Fidelity Prototype
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderate Reviews | Fit Di$trict</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>FIT <span>DI$TRICT</span></h2>
+            <p>SysAdmin Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+
+            <a href="admin-reviews.html" class="active">
+                Moderate Reviews
+            </a>
+
+            <a href="admin-statistics.html">
+                Usage Statistics
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button>Sign Out</button>
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="page-label">SYSADMIN PORTAL</p>
+
+                <h1>Moderate Reviews</h1>
+
+                <p>
+                    Review reported customer content and take
+                    moderation action when necessary.
+                </p>
+            </div>
+
+            <div class="provider-avatar">
+                A
+            </div>
+
+        </header>
+
+
+        <!-- Moderation Statistics -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Reported Reviews</p>
+                <h2 id="reportedCount">3</h2>
+                <span>Require attention</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Removed Today</p>
+                <h2 id="removedCount">2</h2>
+                <span>Reviews removed</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Reports Dismissed</p>
+                <h2 id="dismissedCount">5</h2>
+                <span>Today</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Total Reviews</p>
+                <h2>3,892</h2>
+                <span>Across Fit Di$trict</span>
+            </div>
+
+        </section>
+
+
+        <!-- Reported Reviews -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="page-label">MODERATION QUEUE</p>
+                    <h2>Reported Reviews</h2>
+                </div>
+
+                <select id="adminReviewFilter" class="review-filter">
+                    <option value="all">All Reports</option>
+                    <option value="language">Inappropriate Language</option>
+                    <option value="fraud">Potential Fraud</option>
+                    <option value="spam">Spam</option>
+                </select>
+
+            </div>
+
+
+            <div class="moderation-list" id="moderationList">
+
+                <!-- Report 1 -->
+
+                <article class="moderation-card" data-reason="language">
+
+                    <div class="moderation-header">
+
+                        <div>
+                            <span class="report-badge">
+                                REPORTED
+                            </span>
+
+                            <h3>
+                                Distressed Denim Jacket
+                            </h3>
+
+                            <p>
+                                Review by Alex R. • Cazuals
+                            </p>
+                        </div>
+
+                        <span class="moderation-stars">
+                            ★★☆☆☆
+                        </span>
+
+                    </div>
+
+
+                    <div class="report-reason">
+                        <strong>Report Reason:</strong>
+                        Inappropriate Language
+                    </div>
+
+
+                    <p class="moderation-review-text">
+                        This product was disappointing and the review
+                        contains language that another user reported
+                        as inappropriate.
+                    </p>
+
+
+                    <div class="moderation-meta">
+
+                        <span>
+                            Reported by: Customer
+                        </span>
+
+                        <span>
+                            September 20, 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="moderation-actions">
+
+                        <button type="button" class="remove-review-btn">
+                            Remove Review
+                        </button>
+
+                        <button type="button" class="dismiss-report-btn">
+                            Dismiss Report
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Report 2 -->
+
+                <article class="moderation-card" data-reason="fraud">
+
+                    <div class="moderation-header">
+
+                        <div>
+                            <span class="report-badge">
+                                REPORTED
+                            </span>
+
+                            <h3>
+                                District Runner
+                            </h3>
+
+                            <p>
+                                Review by Chris T. • Cazuals
+                            </p>
+                        </div>
+
+                        <span class="moderation-stars">
+                            ★★★★★
+                        </span>
+
+                    </div>
+
+
+                    <div class="report-reason">
+                        <strong>Report Reason:</strong>
+                        Potential Fraud
+                    </div>
+
+
+                    <p class="moderation-review-text">
+                        This review was reported because the account
+                        activity appears suspicious and may not represent
+                        a genuine customer experience.
+                    </p>
+
+
+                    <div class="moderation-meta">
+
+                        <span>
+                            Reported by: Provider
+                        </span>
+
+                        <span>
+                            September 20, 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="moderation-actions">
+
+                        <button type="button" class="remove-review-btn">
+                            Remove Review
+                        </button>
+
+                        <button type="button" class="dismiss-report-btn">
+                            Dismiss Report
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Report 3 -->
+
+                <article class="moderation-card" data-reason="spam">
+
+                    <div class="moderation-header">
+
+                        <div>
+                            <span class="report-badge">
+                                REPORTED
+                            </span>
+
+                            <h3>
+                                Oversized Graphic Tee
+                            </h3>
+
+                            <p>
+                                Review by Morgan B. • Cazuals
+                            </p>
+                        </div>
+
+                        <span class="moderation-stars">
+                            ★★★☆☆
+                        </span>
+
+                    </div>
+
+
+                    <div class="report-reason">
+                        <strong>Report Reason:</strong>
+                        Spam
+                    </div>
+
+
+                    <p class="moderation-review-text">
+                        This review contains unrelated promotional
+                        content and was reported as spam.
+                    </p>
+
+
+                    <div class="moderation-meta">
+
+                        <span>
+                            Reported by: Customer
+                        </span>
+
+                        <span>
+                            September 19, 2026
+                        </span>
+
+                    </div>
+
+
+                    <div class="moderation-actions">
+
+                        <button type="button" class="remove-review-btn">
+                            Remove Review
+                        </button>
+
+                        <button type="button" class="dismiss-report-btn">
+                            Dismiss Report
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Appears when queue is empty -->
+
+            <div class="empty-moderation" id="emptyModeration" style="display: none;">
+
+                <h3>No reports remaining</h3>
+
+                <p>
+                    The moderation queue is currently clear.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
