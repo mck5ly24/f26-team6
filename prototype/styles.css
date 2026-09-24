@@ -1375,3 +1375,20 @@ body {
     }
 
 }
+
+/* Product Images */
+
+.product-image {
+    width: 100px;
+    height: 90px;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
