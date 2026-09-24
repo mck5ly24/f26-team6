@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit District | Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Fit District</h1>
+            <p>Discover. Compare. Save.</p>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="offerings.html">Clothing</a>
+            <a href="subscriptions.html">Subscriptions</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-section">
+            <p class="eyebrow">SHARE YOUR EXPERIENCE.</p>
+
+            <h2>Customer Reviews</h2>
+
+            <p>
+                Write a review for a clothing service you have
+                subscribed to.
+            </p>
+        </section>
+
+        <section class="review-container">
+
+            <form id="reviewForm">
+
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="Gaffleboy">Gaffleboy</option>
+                    <option value="Cazuals Living">Cazuals Living</option>
+                    <option value="99 Percentile">99 Percentile</option>>
+                </select>
+
+                <label for="rating">Rating</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select a rating</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Good</option>
+                    <option value="3">3 - Average</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                </select>
+
+                <label for="reviewText">Your Review</label>
+                <textarea id="reviewText" name="reviewText" rows="5" placeholder="Tell us about your experience..."
+                    required>
+                </textarea>
+
+                <button type="submit">Submit Review</button>
+
+            </form>
+
+            <div id="reviewMessage"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fit District</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

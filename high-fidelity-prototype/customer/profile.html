@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit District | Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Fit District</h1>
+            <p>Discover. Compare. Save.</p>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="offerings.html">Clothing</a>
+            <a href="subscriptions.html">Subscriptions</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="page-section">
+            <p class="eyebrow">YOUR ACCOUNT.</p>
+
+            <h2>Customer Profile</h2>
+
+            <p>
+                Manage your Fit District customer information.
+            </p>
+        </section>
+
+        <section class="profile-container">
+
+            <form id="profileForm">
+
+                <label for="fullName">Full Name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                >
+
+                <label for="stylePreference">Style Preference</label>
+                <select id="stylePreference" name="stylePreference">
+                    <option value="">Select your style</option>
+                    <option value="Streetwear">Streetwear</option>
+                    <option value="Casual">Casual</option>
+                    <option value="Athletic">Athletic</option>
+                    <option value="Formal">Formal</option>
+                </select>
+
+                <button type="submit">
+                    Save Profile
+                </button>
+
+            </form>
+
+            <div id="profileMessage"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Fit District</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

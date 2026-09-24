@@ -1,0 +1,675 @@
+/* Fit District - Customer Prototype
+   Milestone 2
+*/
+
+/* =========================
+   GENERAL PAGE STYLES
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background-color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dddddd;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: #111;
+}
+
+.logo p {
+    font-size: 13px;
+    color: #666;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #666;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+main {
+    min-height: 75vh;
+}
+
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+    padding: 80px 8%;
+    background-color: #eeeeee;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.eyebrow {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.hero h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 28px;
+    color: #555;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn,
+button {
+    display: inline-block;
+    background-color: #111;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover,
+button:hover {
+    background-color: #444;
+}
+
+
+/* =========================
+   FEATURES SECTION
+   ========================= */
+
+.features {
+    padding: 60px 8%;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e2e2e2;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.feature-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.feature-card a {
+    color: #111;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.feature-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   PAGE SECTIONS
+   ========================= */
+
+.page-section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 8%;
+}
+
+.page-section h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.page-section > p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CLOTHING / OFFERINGS
+   ========================= */
+
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.offering-card {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.offering-card h3 {
+    margin-bottom: 8px;
+}
+
+.offering-card p {
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #111;
+}
+
+
+/* =========================
+   SUBSCRIPTIONS
+   ========================= */
+
+.subscription-list {
+    max-width: 900px;
+    margin: auto;
+}
+
+.subscription-card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+}
+
+.subscription-card h3 {
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   PROFILE
+   ========================= */
+
+.profile-container {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+}
+
+.profile-container h2 {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORMS
+   ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #555;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* =========================
+   REVIEWS
+   ========================= */
+
+.reviews-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.review-card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+}
+
+.review-card h3 {
+    margin-bottom: 8px;
+}
+
+.review-card p {
+    color: #555;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+
+/* =========================
+   MOBILE / RESPONSIVE
+   ========================= */
+
+@media (max-width: 750px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .features {
+        padding: 45px 6%;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offerings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-section {
+        padding: 45px 6%;
+    }
+
+    .profile-container {
+        margin: 30px 20px;
+    }
+}
+
+/* ========================================
+   Modern Clothing Page
+======================================== */
+
+body {
+    background-color: #f6f6f6;
+}
+
+/* Clothing introduction */
+.page-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 40px 35px;
+}
+
+.page-section .eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.page-section h2 {
+    font-size: 42px;
+    margin: 0 0 12px;
+}
+
+.page-section > p:not(.eyebrow) {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Product grid */
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.offering-card {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.offering-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Product image area */
+.product-placeholder {
+    height: 260px;
+    background: #eeeeee;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/* Product information */
+.offering-card h3 {
+    font-size: 21px;
+    margin: 5px 0 8px;
+}
+
+.offering-card .provider {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.offering-card .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* Subscribe button */
+.subscribe-btn {
+    width: 100%;
+    padding: 13px 18px;
+
+    background: #111;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.subscribe-btn:hover {
+    background: #333;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .offerings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .offerings-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .page-section {
+        padding: 45px 20px 25px;
+    }
+
+    .page-section h2 {
+        font-size: 34px;
+    }
+}
+
+/* ========================================
+   FIT DISTRICT BLACK & YELLOW THEME
+   ======================================== */
+
+:root {
+    --black: #111111;
+    --yellow: #f5c518;
+    --white: #ffffff;
+    --background: #f7f7f7;
+    --light-gray: #eeeeee;
+    --gray: #666666;
+    --border: #dddddd;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--black);
+}
+
+/* Header */
+header {
+    background-color: var(--black);
+    color: var(--white);
+    border-bottom: 4px solid var(--yellow);
+}
+
+/* Fit District logo */
+.logo h1 {
+    color: var(--yellow);
+}
+
+.logo p {
+    color: var(--white);
+}
+
+/* Navigation */
+nav a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--yellow);
+}
+
+/* Main hero / page sections */
+.page-section {
+    background-color: var(--white);
+}
+
+/* Small uppercase headings */
+.eyebrow {
+    color: #8a6d00;
+}
+
+/* Product cards */
+.offering-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+}
+
+/* Product image area */
+.product-placeholder {
+    background-color: var(--light-gray);
+}
+
+/* Provider */
+.provider {
+    color: var(--gray);
+}
+
+/* Price */
+.price {
+    color: var(--black);
+    font-weight: 700;
+}
+
+/* Buttons */
+button,
+.subscribe-btn,
+.unsubscribe-btn {
+    background-color: var(--yellow);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Button hover */
+button:hover,
+.subscribe-btn:hover,
+.unsubscribe-btn:hover {
+    background-color: var(--black);
+    color: var(--yellow);
+}
+
+/* Footer */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Browse Clothing button */
+.browse-btn {
+    display: inline-block;
+    background-color: #f5c518;
+    color: #111111;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.browse-btn:visited {
+    color: #111111;
+}
+
+.browse-btn:hover {
+    background-color: #111111;
+    color: #f5c518;
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #eeeeee;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Windbreaker product image */
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    border-radius: 12px;
+}
+
