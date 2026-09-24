@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!--
+  Name: Ronald Hester Jr.
+  Date: 09/20/2026
+  CSC 340
+
+  Fit Di$trict SysAdmin Usage Statistics
+  Milestone 2 High-Fidelity Prototype
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage Statistics | Fit Di$trict</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>FIT <span>DI$TRICT</span></h2>
+            <p>SysAdmin Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="admin-reviews.html">
+                Moderate Reviews
+            </a>
+
+            <a href="admin-statistics.html" class="active">
+                Usage Statistics
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button>Sign Out</button>
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="page-label">
+                    SYSADMIN PORTAL
+                </p>
+
+                <h1>Usage Statistics</h1>
+
+                <p>
+                    Monitor activity and engagement across
+                    the Fit Di$trict platform.
+                </p>
+
+            </div>
+
+
+            <select id="statisticsPeriod" class="review-filter">
+                <option value="7">Last 7 Days</option>
+                <option value="30" selected>Last 30 Days</option>
+                <option value="90">Last 90 Days</option>
+            </select>
+
+        </header>
+
+
+        <!-- Main Statistics -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <p>Total Users</p>
+
+                <h2 id="statUsers">
+                    2,418
+                </h2>
+
+                <span id="statUsersChange">
+                    +184 this month
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Product Views</p>
+
+                <h2 id="statViews">
+                    18,420
+                </h2>
+
+                <span id="statViewsChange">
+                    +12% from last month
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Customer Activity</p>
+
+                <h2 id="statCustomerActivity">
+                    6,842
+                </h2>
+
+                <span>
+                    Actions recorded
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <p>Provider Activity</p>
+
+                <h2 id="statProviderActivity">
+                    1,126
+                </h2>
+
+                <span>
+                    Actions recorded
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Platform Activity -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="page-label">
+                        PLATFORM ACTIVITY
+                    </p>
+
+                    <h2>
+                        Activity Overview
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="usage-bars">
+
+                <div class="usage-row">
+
+                    <div class="usage-label">
+
+                        <span>Product Views</span>
+
+                        <strong id="viewsValue">
+                            18,420
+                        </strong>
+
+                    </div>
+
+                    <div class="usage-track">
+
+                        <div class="usage-fill" id="viewsBar" style="width: 92%;"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="usage-row">
+
+                    <div class="usage-label">
+
+                        <span>Product Searches</span>
+
+                        <strong id="searchesValue">
+                            13,205
+                        </strong>
+
+                    </div>
+
+                    <div class="usage-track">
+
+                        <div class="usage-fill" id="searchesBar" style="width: 72%;"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="usage-row">
+
+                    <div class="usage-label">
+
+                        <span>Reviews Submitted</span>
+
+                        <strong id="reviewsValue">
+                            3,892
+                        </strong>
+
+                    </div>
+
+                    <div class="usage-track">
+
+                        <div class="usage-fill" id="reviewsBar" style="width: 48%;"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="usage-row">
+
+                    <div class="usage-label">
+
+                        <span>Provider Updates</span>
+
+                        <strong id="updatesValue">
+                            1,126
+                        </strong>
+
+                    </div>
+
+                    <div class="usage-track">
+
+                        <div class="usage-fill" id="updatesBar" style="width: 32%;"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Popular Products + Brands -->
+
+        <div class="statistics-grid">
+
+            <!-- Popular Products -->
+
+            <section class="dashboard-section">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="page-label">
+                            PRODUCTS
+                        </p>
+
+                        <h2>
+                            Popular Products
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ranking-list">
+
+                    <div class="ranking-item">
+
+                        <span class="rank-number">
+                            1
+                        </span>
+
+                        <div>
+                            <strong>District Runner</strong>
+                            <p>Cazuals • Footwear</p>
+                        </div>
+
+                        <span class="rank-stat">
+                            2,481 views
+                        </span>
+
+                    </div>
+
+
+                    <div class="ranking-item">
+
+                        <span class="rank-number">
+                            2
+                        </span>
+
+                        <div>
+                            <strong>
+                                Distressed Denim Jacket
+                            </strong>
+
+                            <p>
+                                Cazuals • Clothing
+                            </p>
+                        </div>
+
+                        <span class="rank-stat">
+                            2,106 views
+                        </span>
+
+                    </div>
+
+
+                    <div class="ranking-item">
+
+                        <span class="rank-number">
+                            3
+                        </span>
+
+                        <div>
+                            <strong>
+                                Oversized Graphic Tee
+                            </strong>
+
+                            <p>
+                                Cazuals • Clothing
+                            </p>
+                        </div>
+
+                        <span class="rank-stat">
+                            1,845 views
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Trending Brands -->
+
+            <section class="dashboard-section">
+
+                <div class="section-title">
+
+                    <div>
+
+                        <p class="page-label">
+                            PROVIDERS
+                        </p>
+
+                        <h2>
+                            Trending Brands
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ranking-list">
+
+                    <div class="ranking-item">
+
+                        <span class="rank-number">
+                            1
+                        </span>
+
+                        <div>
+                            <strong>Cazuals</strong>
+                            <p>Streetwear</p>
+                        </div>
+
+                        <span class="trend-up">
+                            +18%
+                        </span>
+
+                    </div>
+
+
+                    <div class="ranking-item">
+
+                        <span class="rank-number">
+                            2
+                        </span>
+
+                        <div>
+                            <strong>Urban Thread</strong>
+                            <p>Contemporary</p>
+                        </div>
+
+                        <span class="trend-up">
+                            +14%
+                        </span>
+
+                    </div>
+
+
+                    <div class="ranking-item">
+
+                        <span class="rank-number">
+                            3
+                        </span>
+
+                        <div>
+                            <strong>Northside</strong>
+                            <p>Streetwear</p>
+                        </div>
+
+                        <span class="trend-up">
+                            +9%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- User Activity -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="page-label">
+                        USERS
+                    </p>
+
+                    <h2>
+                        Platform Breakdown
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="platform-breakdown">
+
+                <div>
+
+                    <span>
+                        Customers
+                    </span>
+
+                    <strong>
+                        2,312
+                    </strong>
+
+                    <p>
+                        95.6% of accounts
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Providers
+                    </span>
+
+                    <strong>
+                        86
+                    </strong>
+
+                    <p>
+                        3.6% of accounts
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        SysAdmins
+                    </span>
+
+                    <strong>
+                        20
+                    </strong>
+
+                    <p>
+                        0.8% of accounts
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--
+  Name: Ronald Hester Jr.
+  Date: 09/20/2026
+  CSC 340
+
+  Fit Di$trict Provider Activity
+  Milestone 2 High-Fidelity Prototype
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Activity | Fit Di$trict</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>FIT <span>DI$TRICT</span></h2>
+            <p>Provider Portal</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="provider-dashboard.html">Dashboard</a>
+            <a href="provider-profile.html">My Profile</a>
+            <a href="provider-products.html">Manage Products</a>
+            <a href="provider-activity.html" class="active">Activity</a>
+            <a href="provider-reviews.html">Reviews</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button>Sign Out</button>
+        </div>
+
+    </aside>
+
+
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+
+            <div>
+                <p class="page-label">PROVIDER PORTAL</p>
+                <h1>Activity</h1>
+                <p>
+                    Track customer engagement and activity across your
+                    Fit Di$trict listings.
+                </p>
+            </div>
+
+            <div class="provider-avatar">
+                C
+            </div>
+
+        </header>
+
+
+        <!-- Activity Statistics -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Product Views</p>
+                <h2>1,284</h2>
+                <span>Last 30 days</span>
+            </div>
+
+            <div class="stat-card">
+                <p>New Reviews</p>
+                <h2>14</h2>
+                <span>Last 30 days</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Most Viewed</p>
+                <h2>410</h2>
+                <span>District Runner</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Average Rating</p>
+                <h2>4.7</h2>
+                <span>Across all products</span>
+            </div>
+
+        </section>
+
+
+        <!-- Activity Feed -->
+
+        <section class="dashboard-section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="page-label">STORE ACTIVITY</p>
+                    <h2>Recent Activity</h2>
+                </div>
+
+                <select id="activityFilter" class="review-filter">
+                    <option value="all">All Activity</option>
+                    <option value="review">Reviews</option>
+                    <option value="view">Product Views</option>
+                    <option value="product">Product Updates</option>
+                </select>
+
+            </div>
+
+
+            <div class="activity-timeline">
+
+                <div class="timeline-item" data-type="review">
+
+                    <div class="timeline-icon">
+                        ★
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-heading">
+                            <strong>New 5-star review</strong>
+                            <span>10 minutes ago</span>
+                        </div>
+
+                        <p>
+                            Jordan M. left a 5-star review on
+                            <strong>Distressed Denim Jacket</strong>.
+                        </p>
+
+                        <a href="provider-reviews.html">
+                            View Review →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item" data-type="view">
+
+                    <div class="timeline-icon">
+                        250
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-heading">
+                            <strong>Product view milestone</strong>
+                            <span>2 hours ago</span>
+                        </div>
+
+                        <p>
+                            <strong>Oversized Graphic Tee</strong>
+                            reached 250 product views.
+                        </p>
+
+                        <a href="provider-products.html">
+                            View Product →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item" data-type="product">
+
+                    <div class="timeline-icon">
+                        ✓
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-heading">
+                            <strong>Product updated</strong>
+                            <span>Yesterday</span>
+                        </div>
+
+                        <p>
+                            The listing information for
+                            <strong>District Runner</strong> was updated.
+                        </p>
+
+                        <a href="provider-products.html">
+                            Manage Product →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item" data-type="review">
+
+                    <div class="timeline-icon">
+                        ★
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-heading">
+                            <strong>New 4-star review</strong>
+                            <span>2 days ago</span>
+                        </div>
+
+                        <p>
+                            Taylor R. reviewed
+                            <strong>Oversized Graphic Tee</strong>.
+                        </p>
+
+                        <a href="provider-reviews.html">
+                            View Review →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item" data-type="view">
+
+                    <div class="timeline-icon">
+                        400
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <div class="timeline-heading">
+                            <strong>Product view milestone</strong>
+                            <span>3 days ago</span>
+                        </div>
+
+                        <p>
+                            <strong>District Runner</strong>
+                            reached 400 product views.
+                        </p>
+
+                        <a href="provider-products.html">
+                            View Product →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
