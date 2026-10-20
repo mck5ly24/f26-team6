@@ -34,6 +34,11 @@ public class ProductService {
         product.setId(null);
         product.setProvider(provider);
 
+        // SECURITY: Every new product must await admin approval
+        product.setModerationStatus(
+                Product.ModerationStatus.PENDING
+        );
+
         return productRepository.save(product);
     }
 
@@ -69,6 +74,9 @@ public class ProductService {
         product.setSize(updatedProduct.getSize());
         product.setImageUrl(updatedProduct.getImageUrl());
         product.setStockQuantity(updatedProduct.getStockQuantity());
+
+        // Preserve existing moderation status.
+        // Providers cannot change approval status through this method.
 
         return productRepository.save(product);
     }

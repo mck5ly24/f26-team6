@@ -32,6 +32,29 @@ public class Product {
     @Min(0)
     private int stockQuantity;
 
+    
+    // System Administrator product moderation
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ModerationStatus moderationStatus =
+            ModerationStatus.PENDING;
+
+    public enum ModerationStatus {
+        PENDING,
+        APPROVED,
+        REJECTED
+    }
+
+    public ModerationStatus getModerationStatus() {
+        return moderationStatus;
+    }
+
+    public void setModerationStatus(ModerationStatus moderationStatus) {
+        this.moderationStatus = moderationStatus;
+    }
+
+
     @ManyToOne
     @JoinColumn(name = "provider_id", nullable = false)
     private Provider provider;
