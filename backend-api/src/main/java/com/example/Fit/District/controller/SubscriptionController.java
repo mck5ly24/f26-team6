@@ -21,67 +21,66 @@ import java.util.List;
 @Validated
 public class SubscriptionController {
 
-    private final SubscriptionService subscriptionService;
+        private final SubscriptionService subscriptionService;
 
-    public SubscriptionController(
-            SubscriptionService subscriptionService) {
-        this.subscriptionService = subscriptionService;
-    }
+        public SubscriptionController(
+                        SubscriptionService subscriptionService) {
+                this.subscriptionService = subscriptionService;
+        }
 
-    public record SubscriptionRequest(
-            @NotNull @Positive Long providerId) {
-    }
+        public record SubscriptionRequest(
+                        @NotNull @Positive Long providerId) {
+        }
 
-    public record SubscriptionResponse(
-            Long subscriptionId,
-            Long customerId,
-            Long providerId,
-            LocalDate subscribeDate,
-            String status) {
-    }
+        public record SubscriptionResponse(
+                        Long subscriptionId,
+                        Long customerId,
+                        Long providerId,
+                        LocalDate subscribeDate,
+                        String status) {
+        }
 
-    private SubscriptionResponse toResponse(Subscription subscription) {
-        return new SubscriptionResponse(
-                subscription.getSubscriptionId(),
-                subscription.getCustomer().getCustomerId(),
-                subscription.getProviderId(),
-                subscription.getSubscribeDate(),
-                subscription.getStatus()
-        );
-    }
+        private SubscriptionResponse toResponse(Subscription subscription) {
+                return new SubscriptionResponse(
+                                subscription.getSubscriptionId(),
+                                subscription.getCustomer().getCustomerId(),
+                                subscription.getProvider().getId(),
+                                subscription.getSubscribeDate(),
+                                subscription.getStatus());
+        }
 
-    // Subscribe a customer to a provider
-    @PostMapping("/customers/{customerId}/subscriptions")
-    public ResponseEntity<SubscriptionResponse> subscribe(
-            @PathVariable Long customerId,
-            @Valid @RequestBody SubscriptionRequest request) {
+        // Subscribe a customer to a provider
+        @PostMapping("/customers/{customerId}/subscriptions")
+        public ResponseEntity<SubscriptionResponse> subscribe(
+                        @PathVariable Long customerId,
+                        @Valid @RequestBody SubscriptionRequest request) {
 
-        Subscription subscription = subscriptionService.subscribe(
-                customerId, request.providerId());
+                Subscription subscription = subscriptionService.subscribe(
+                                customerId, request.providerId());
 
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(toResponse(subscription));
-    }
+                return ResponseEntity.status(HttpStatus.CREATED)
+                                .body(toResponse(subscription));
+        }
 
-    // View all subscriptions for a customer
-    @GetMapping("/customers/{customerId}/subscriptions")
-    public List<SubscriptionResponse> getSubscriptions(
-            @PathVariable Long customerId) {
+        // View all subscriptions for a customer
+        @GetMapping("/customers/{customerId}/subscriptions")
+        public List<SubscriptionResponse> getSubscriptions(
+                        @PathVariable Long customerId) {
 
-        return subscriptionService
-                .getCustomerSubscriptions(customerId)
-                .stream()
-                .map(this::toResponse)
-                .toList();
-    }
+                return subscriptionService
+                                .getCustomerSubscriptions(customerId)
+                                .stream()
+                                .map(this::toResponse)
+                                .toList();
+        }
 
-    // Delete a subscription
-    @DeleteMapping("/subscriptions/{subscriptionId}")
-    public ResponseEntity<Void> deleteSubscription(
-            @PathVariable Long subscriptionId) {
+        // Delete a subscription
+        @DeleteMapping("/subscriptions/{subscriptionId}")
+        public ResponseEntity<Void> deleteSubscription(
+                        @PathVariable Long subscriptionId) {
 
-        subscriptionService.deleteSubscription(subscriptionId);
+                subscriptionService.deleteSubscription(subscriptionId);
 
-        return ResponseEntity.noContent().build();
-    }
+                return ResponseEntity.noContent().build();
+        }
 }

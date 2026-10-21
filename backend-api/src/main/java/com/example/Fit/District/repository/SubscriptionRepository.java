@@ -11,8 +11,10 @@ import java.util.List;
 public interface SubscriptionRepository
         extends JpaRepository<Subscription, Long> {
 
+    // Get all subscriptions belonging to a customer
     List<Subscription> findByCustomer_CustomerId(Long customerId);
 
-    boolean existsByCustomer_CustomerIdAndProviderId(
+    // Check if a customer is already subscribed to a provider
+    boolean existsByCustomer_CustomerIdAndProvider_Id(
             Long customerId, Long providerId);
 }

@@ -16,10 +16,9 @@ public class Subscription {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    // Provider relationship will be added after
-    // your partner merges Provider.java into main.
-
-    private Long providerId;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "provider_id", nullable = false)
+    private Provider provider;
 
     private LocalDate subscribeDate;
 
@@ -48,13 +47,15 @@ public class Subscription {
         this.customer = customer;
     }
 
-    public Long getProviderId() {
-        return providerId;
+    public Provider getProvider() {
+        return provider;
     }
 
-    public void setProviderId(Long providerId) {
-        this.providerId = providerId;
+    public void setProvider(Provider provider) {
+        this.provider = provider;
     }
+
+
 
     public LocalDate getSubscribeDate() {
         return subscribeDate;
