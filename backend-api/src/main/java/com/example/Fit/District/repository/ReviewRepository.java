@@ -1,3 +1,4 @@
+
 package com.example.Fit.District.repository;
 
 import com.example.Fit.District.entity.Review;
@@ -21,4 +22,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     // Find all reviews submitted by a customer
     List<Review> findByCustomerCustomerId(Long customerId);
+
+    // Find customer review activity for a provider's products
+    List<Review> findByProductProviderId(Long providerId);
 }
