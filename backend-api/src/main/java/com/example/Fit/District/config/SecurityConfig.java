@@ -1,4 +1,3 @@
-
 package com.example.Fit.District.config;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -23,23 +22,35 @@ public class SecurityConfig {
             HttpSecurity http) throws Exception {
 
         http
-            // Development REST API configuration
             .csrf(AbstractHttpConfigurer::disable)
 
             .authorizeHttpRequests(auth -> auth
 
-                // Only administrators can access admin endpoints
+                // Administrator endpoints
                 .requestMatchers("/api/admin/**")
                     .hasRole("ADMIN")
 
-                // Existing API routes remain accessible for development
+                // Only providers or admins may submit provider replies
+                .requestMatchers(
+                    org.springframework.http.HttpMethod.POST,
+                    "/api/provider-replies/provider/*/review/*"
+                )
+                    .hasAnyRole("PROVIDER", "ADMIN")
+
+                // Provider reply reads require authentication
+                .requestMatchers("/api/provider-replies/**")
+                    .authenticated()
+
+                // Existing development endpoints
                 .requestMatchers("/api/providers/**")
                     .permitAll()
+
                 .requestMatchers("/api/products/**")
                     .permitAll()
 
-                // Require authentication for other endpoints
-                .anyRequest().authenticated()
+                // Other endpoints require authentication
+                .anyRequest()
+                    .authenticated()
             )
 
             .httpBasic(Customizer.withDefaults());
@@ -58,7 +69,9 @@ public class SecurityConfig {
             @Value("${APP_ADMIN_USERNAME}") String adminUsername,
             @Value("${APP_ADMIN_PASSWORD}") String adminPassword,
             @Value("${APP_USER_USERNAME}") String userUsername,
-            @Value("${APP_USER_PASSWORD}") String userPassword) {
+            @Value("${APP_USER_PASSWORD}") String userPassword,
+            @Value("${APP_PROVIDER_USERNAME}") String providerUsername,
+            @Value("${APP_PROVIDER_PASSWORD}") String providerPassword) {
 
         UserDetails admin = User.withUsername(adminUsername)
                 .password(passwordEncoder.encode(adminPassword))
@@ -70,9 +83,15 @@ public class SecurityConfig {
                 .roles("USER")
                 .build();
 
+        UserDetails provider = User.withUsername(providerUsername)
+                .password(passwordEncoder.encode(providerPassword))
+                .roles("PROVIDER")
+                .build();
+
         return new InMemoryUserDetailsManager(
                 admin,
-                regularUser
+                regularUser,
+                provider
         );
     }
 }
