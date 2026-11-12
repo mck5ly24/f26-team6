@@ -1392,3 +1392,92 @@ body {
     object-fit: cover;
     display: block;
 }
+
+
+/* Full-stack provider product cards */
+.provider-product-card .provider-product-info {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+}
+
+.provider-product-card .provider-product-info h3 {
+    max-width: none;
+    overflow-wrap: break-word;
+}
+
+.provider-product-card .provider-product-info p {
+    max-width: none;
+    overflow-wrap: break-word;
+}
+
+
+/* Fix product information width */
+.provider-product-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.provider-product-card .provider-product-info {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+}
+
+.provider-product-card .provider-product-info h3,
+.provider-product-card .provider-product-info p {
+    width: 100%;
+    max-width: none;
+}
+
+
+/* Database-backed product cards without images or action buttons */
+.provider-product-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .provider-product-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Milestone 4 - Provider product cards */
+.provider-product-card {
+    display: block;
+    width: 100%;
+}
+
+.provider-product-info {
+    width: 100%;
+    min-width: 0;
+}
+
+.provider-product-info h3,
+.provider-product-info p {
+    overflow-wrap: break-word;
+}
+
+/* Milestone 4 - Product card layout fix */
+.dashboard-section .provider-product-card {
+    display: block;
+    width: 100%;
+    grid-template-columns: none;
+}
+
+.dashboard-section .provider-product-info {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+.dashboard-section .provider-product-info h3,
+.dashboard-section .provider-product-info p {
+    width: 100%;
+    max-width: none;
+}
