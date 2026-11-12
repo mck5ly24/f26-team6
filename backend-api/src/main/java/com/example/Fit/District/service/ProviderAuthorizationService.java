@@ -75,4 +75,33 @@ public class ProviderAuthorizationService {
             );
         }
     }
+
+    public Provider getAuthenticatedProvider(Authentication authentication) {
+
+    if (authentication == null || !authentication.isAuthenticated()) {
+        throw new ResponseStatusException(
+                HttpStatus.UNAUTHORIZED,
+                "Authentication required"
+        );
+    }
+
+    boolean isProvider = authentication.getAuthorities()
+            .stream()
+            .anyMatch(authority ->
+                    authority.getAuthority().equals("ROLE_PROVIDER")
+            );
+
+    if (!isProvider || !authentication.getName().equals(providerUsername)) {
+        throw new ResponseStatusException(
+                HttpStatus.FORBIDDEN,
+                "Provider account required"
+        );
+    }
+
+    return providerRepository.findByEmail(providerEmail)
+            .orElseThrow(() -> new ResponseStatusException(
+                    HttpStatus.FORBIDDEN,
+                    "No provider account linked to this login"
+            ));
+}
 }

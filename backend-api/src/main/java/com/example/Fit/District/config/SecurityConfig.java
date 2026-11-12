@@ -13,6 +13,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import com.example.Fit.District.entity.Provider;
+import com.example.Fit.District.service.ProviderAuthorizationService;
+import org.springframework.security.core.Authentication;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.web.server.ResponseStatusException;
 
 @Configuration
 public class SecurityConfig {
@@ -22,38 +27,78 @@ public class SecurityConfig {
             HttpSecurity http) throws Exception {
 
         http
-            .csrf(AbstractHttpConfigurer::disable)
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/api/**"))
 
-            .authorizeHttpRequests(auth -> auth
+                .authorizeHttpRequests(auth -> auth
 
-                // Administrator endpoints
-                .requestMatchers("/api/admin/**")
-                    .hasRole("ADMIN")
+                        // Administrator endpoints
+                        .requestMatchers("/api/admin/**")
+                        .hasRole("ADMIN")
 
-                // Only providers or admins may submit provider replies
-                .requestMatchers(
-                    org.springframework.http.HttpMethod.POST,
-                    "/api/provider-replies/provider/*/review/*"
-                )
-                    .hasAnyRole("PROVIDER", "ADMIN")
+                        // Only providers or admins may submit provider replies
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.POST,
+                                "/api/provider-replies/provider/*/review/*")
+                        .hasAnyRole("PROVIDER", "ADMIN")
 
-                // Provider reply reads require authentication
-                .requestMatchers("/api/provider-replies/**")
-                    .authenticated()
+                        // Provider reply reads require authentication
+                        .requestMatchers("/api/provider-replies/**")
+                        .authenticated()
 
-                // Existing development endpoints
-                .requestMatchers("/api/providers/**")
-                    .permitAll()
+                        // Provider portal requires provider login
+                        .requestMatchers("/provider/**")
+                        .hasRole("PROVIDER")
 
-                .requestMatchers("/api/products/**")
-                    .permitAll()
+                        // Only administrators can create, update, or delete providers
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.POST,
+                                "/api/providers", "/api/providers/")
+                        .hasRole("ADMIN")
 
-                // Other endpoints require authentication
-                .anyRequest()
-                    .authenticated()
-            )
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.PUT,
+                                "/api/providers/*")
+                        .hasRole("ADMIN")
 
-            .httpBasic(Customizer.withDefaults());
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.DELETE,
+                                "/api/providers/*")
+                        .hasRole("ADMIN")
+
+                        // Provider information remains publicly readable
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.GET,
+                                "/api/providers/**")
+                        .permitAll()
+
+                        // Product modifications require provider authentication
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.POST,
+                                "/api/products/provider/*")
+                        .hasRole("PROVIDER")
+
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.PUT,
+                                "/api/products/*")
+                        .hasRole("PROVIDER")
+
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.DELETE,
+                                "/api/products/*")
+                        .hasRole("PROVIDER")
+
+                        // Product information remains publicly readable
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.GET,
+                                "/api/products/**")
+                        .permitAll()
+
+                        // Other endpoints require authentication
+                        .anyRequest()
+                        .authenticated())
+
+                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }
@@ -91,7 +136,6 @@ public class SecurityConfig {
         return new InMemoryUserDetailsManager(
                 admin,
                 regularUser,
-                provider
-        );
+                provider);
     }
 }

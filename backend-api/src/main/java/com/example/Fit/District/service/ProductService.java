@@ -71,8 +71,6 @@ public class ProductService {
         product.setName(updatedProduct.getName());
         product.setDescription(updatedProduct.getDescription());
         product.setPrice(updatedProduct.getPrice());
-        product.setSize(updatedProduct.getSize());
-        product.setImageUrl(updatedProduct.getImageUrl());
         product.setStockQuantity(updatedProduct.getStockQuantity());
 
         // Preserve existing moderation status.
