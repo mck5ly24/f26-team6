@@ -40,6 +40,12 @@
             <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
 
+        <!-- FreeMarker Template Engine -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
         <!-- Authentication and Authorization -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

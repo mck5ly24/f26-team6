@@ -1,8 +1,11 @@
+
 package com.example.Fit.District.config;
 
+import jakarta.servlet.DispatcherType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -13,7 +16,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.context.annotation.Profile;
 
+@Profile("!demo")
 @Configuration
 public class SecurityConfig {
 
@@ -22,35 +27,66 @@ public class SecurityConfig {
             HttpSecurity http) throws Exception {
 
         http
+            // Current project configuration for API testing
             .csrf(AbstractHttpConfigurer::disable)
 
             .authorizeHttpRequests(auth -> auth
 
+                // Allow error dispatches
+                .dispatcherTypeMatchers(DispatcherType.ERROR)
+                .permitAll()
+
+                // Public customer registration
+                .requestMatchers(
+                    HttpMethod.GET,
+                    "/customers/register"
+                ).permitAll()
+
+                .requestMatchers(
+                    HttpMethod.POST,
+                    "/customers/register"
+                ).permitAll()
+
+                // Public error page
+                .requestMatchers("/error")
+                .permitAll()
+
+                // Static resources
+                .requestMatchers(
+                    "/styles.css",
+                    "/images/**",
+                    "/script.js",
+                    "/favicon.ico"
+                ).permitAll()
+
                 // Administrator endpoints
                 .requestMatchers("/api/admin/**")
-                    .hasRole("ADMIN")
+                .hasRole("ADMIN")
 
-                // Only providers or admins may submit provider replies
+                // Provider replies: POST restricted
                 .requestMatchers(
-                    org.springframework.http.HttpMethod.POST,
+                    HttpMethod.POST,
                     "/api/provider-replies/provider/*/review/*"
-                )
-                    .hasAnyRole("PROVIDER", "ADMIN")
+                ).hasAnyRole("PROVIDER", "ADMIN")
 
                 // Provider reply reads require authentication
                 .requestMatchers("/api/provider-replies/**")
-                    .authenticated()
+                .authenticated()
 
                 // Existing development endpoints
                 .requestMatchers("/api/providers/**")
-                    .permitAll()
+                .permitAll()
 
                 .requestMatchers("/api/products/**")
-                    .permitAll()
+                .permitAll()
+
+                // Customer profile requires USER role
+                .requestMatchers("/customers/profile/**")
+                .hasRole("USER")
 
                 // Other endpoints require authentication
                 .anyRequest()
-                    .authenticated()
+                .authenticated()
             )
 
             .httpBasic(Customizer.withDefaults());
